@@ -44,6 +44,7 @@ namespace CoreTest
             services.AddSingleton(config);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddKendo();
 
             services.AddTransient<IDateService, TestDateService>();
         }

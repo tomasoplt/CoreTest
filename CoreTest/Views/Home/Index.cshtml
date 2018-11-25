@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Kendo.Mvc.UI
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -8,6 +10,8 @@
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
+
+ 
     <div class="carousel-inner" role="listbox">
         <div class="item active">
             <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
@@ -62,14 +66,15 @@
         </ul>
     </div>
     <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="https://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
+        <div class="demo-section k-content">
+            <h4>Select date:</h4>
+            @(Html.Kendo().DateTimePicker()
+                                .Name("datetimepicker")
+                                .Value(DateTime.Now)
+                                .HtmlAttributes(new { style = "width: 100%", title = "datetimepicker" })
+                                .DateInput()
+            )
+        </div>
     </div>
     <div class="col-md-3">
         <h2>Overview</h2>

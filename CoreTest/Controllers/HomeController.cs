@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using CoreTest.Models;
 using CoreTest.Infrastructure.Configuration;
 using Microsoft.Extensions.Options;
+using CoreTest.Business;
 
 namespace CoreTest.Controllers
 {
@@ -19,7 +20,7 @@ namespace CoreTest.Controllers
             _options = options.Value;
         }
 
-        public IActionResult Index()
+        public IActionResult Index([FromServices] IDateService dateService)
         {
             return View();
         }
